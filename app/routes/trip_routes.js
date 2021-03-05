@@ -25,11 +25,10 @@ router.post('/trips', requireToken, (req, res, next) => {
 // Index Trip
 // TOKEN=ab5ea5979f95fed6a2427237541789a3 sh curl-scripts/trips/index.sh
 router.get('/trips', requireToken, (req, res, next) => {
-  Trip.find()
-    .then(trip => {
-      return trip.map(trip => trip.toObject())
-    })
-    .then(trip => res.status(200).json({ trip: trip }))
+  const userId = req.user.id
+  Trip.find({ owner: userId })
+    .then(trips => trips.map(trip => trip.toObject()))
+    .then(trips => res.json(trips))
     .catch(next)
 })
 
@@ -38,6 +37,7 @@ router.get('/trips', requireToken, (req, res, next) => {
 router.get('/trips/:id', requireToken, (req, res, next) => {
   Trip.findById(req.params.id)
     .then(handle404)
+    .then(trip => requireOwnership(req, trip))
     .then(trip => res.status(200).json({ trip: trip.toObject() }))
     .catch(next)
 })
