@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 
+const eventSchema = require('./event')
+
 const tripSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -13,6 +15,7 @@ const tripSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  events: [eventSchema],
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
