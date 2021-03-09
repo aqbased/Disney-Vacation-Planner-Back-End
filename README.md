@@ -12,14 +12,20 @@ search the trip and add new events for that trip.
 
 ## Planning Story
 
-For the back end, I needed to create a new resource(trips) to link to my user.  I created routes for each trip path and then linked them to the user.  Starting the front end side of this project was a blast.  The first thing I
+For the back end, I needed to create a new resource(trips) to link to my user.
+I created routes for each trip path and then linked them to the user.
+Starting the front end side of this project was a blast.  The first thing I
 needed to take care of was setting up the authentication for a new user.  After
 that my plan was to start implementing the user's "trips" into the client.  I
 started off with all the CRUD actions for them and added forms to go along with
 them.  Finally I wanted to implement a subdocument to be created by the user
 also.  With that part of the project happening I also implemented a carousel
 with 2 seperate images on each slide for a user's trip and event info to to
-act as a caption for.
+act as a caption for.  My main problem solving strategy was to break and fix my
+code over and over for a good 10-20 minutes.  I would then search our main
+project repo's issue queu and google for any help.  If all of the above fails
+I had the help of my instructors or fellow classmates to help tag-team the
+problem.
 
 ### User Stories
 
