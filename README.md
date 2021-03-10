@@ -7,7 +7,7 @@ search the trip and add new events for that trip.
 ## Important Links
 
 - [Front-End Repo](https://github.com/aqbased/Disney-Vacation-Planner-Client)
-- [Deployed API](https://git.heroku.com/limitless-retreat-94224.git)
+- [Deployed API](https://limitless-retreat-94224.herokuapp.com/)
 - [Deployed Client](https://aqbased.github.io/Disney-Vacation-Planner-Client/)
 
 ## Planning Story
