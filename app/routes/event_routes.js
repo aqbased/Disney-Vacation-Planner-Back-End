@@ -18,7 +18,7 @@ router.post('/trips/:id/events', requireToken, (req, res, next) => {
   const eventData = req.body.event
   const id = req.params.id
   console.log('this is id', id)
-  Trip.findById(id)
+  Trip.findOne({ _id: id, owner: req.user.id })
     .then(handle404)
     .then(trip => {
       trip.events.push(eventData)
